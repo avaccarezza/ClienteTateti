@@ -147,11 +147,12 @@
             // buttonCerrarSesion
             // 
             this.buttonCerrarSesion.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonCerrarSesion.Location = new System.Drawing.Point(233, 42);
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(233, 41);
             this.buttonCerrarSesion.Name = "buttonCerrarSesion";
             this.buttonCerrarSesion.Size = new System.Drawing.Size(114, 31);
             this.buttonCerrarSesion.TabIndex = 11;

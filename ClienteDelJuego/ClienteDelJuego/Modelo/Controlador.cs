@@ -54,19 +54,21 @@ namespace ClienteDelJuego.Modelo
                 }
             }
         }
-
+        
+        public void cartelBuscarPartida()
+        {
+            FormBuscarPartida matchmaking = new FormBuscarPartida(miUsuario, this, estadisticas);
+            matchmaking.Show();
+        }
         public void jugar()
         {
-
+           
             c1.PonerEnCola(miUsuario);
             c1.enviarMensaje("c");
-           
-            FormBuscarPartida matchmaking = new FormBuscarPartida(miUsuario,this);
-            matchmaking.Show();
             c1.enviarUsuario(miUsuario);
-            
-            getRival();
            
+            getRival();
+            
             if (getRival() != null)
             {
                 Console.WriteLine("dentro del if");
@@ -77,10 +79,9 @@ namespace ClienteDelJuego.Modelo
                
                 c1.salirDeLaCola(miUsuario);
                 tablero.obtenerJugadores(miUsuario, uRival);
-                matchmaking.Close();
-                
-                
+                //matchmaking.Close(); 
             }
+           
         }
         public Usuario getRival()
         {

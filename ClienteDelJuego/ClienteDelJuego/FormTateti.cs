@@ -16,6 +16,7 @@ namespace ClienteDelJuego
         ClienteDelJuego.Modelo.LogicaJuego lj1 = new ClienteDelJuego.Modelo.LogicaJuego();
         Controlador controlador;
         Usuario miUsuario;
+        FormLogin l1;
         FormEstadisticasUsuario estadisticas;
         public FormTateti(Controlador controlador, Usuario miUsuario, FormEstadisticasUsuario estadisticas)
         {
@@ -33,10 +34,10 @@ namespace ClienteDelJuego
             this.labelP1.Text = miUsuario.usuario;
             this.labelP2.Text = controlador.getRival().usuario;
         }
-        private void buttonJugar_Click(object sender, EventArgs e)
+        private void buttonSalir_Click(object sender, EventArgs e)
         {
-           // Form formulario = new FormEstadisticasUsuario();
-           // formulario.Show();
+            Form formulario = new FormEstadisticasUsuario(miUsuario,controlador,l1);
+           formulario.Show();
             this.Hide();
         }
 
@@ -50,7 +51,7 @@ namespace ClienteDelJuego
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //c1.generarJugada(1);
+            //controlador.generarJugada(1);
             button2.Text = lj1.ponerFicha();
             button2.Enabled = false;
         }
@@ -109,11 +110,28 @@ namespace ClienteDelJuego
             Application.Exit();
         }
 
+        bool cerrarSesion = false;
         private void buttonAjustes_Click(object sender, EventArgs e)
         {
-            Form formulario = new FormLogin();
-            formulario.Show();
-            this.Hide();
+            if (cerrarSesion)
+            {
+                buttonCerrarSesion.Hide();
+                cerrarSesion = false;
+            }
+            else
+            {
+                buttonCerrarSesion.Show();
+                cerrarSesion = true;
+            }
+        }
+        private void buttonCerrarSesion_MouseLeave(object sender, System.EventArgs e)
+        {
+            buttonCerrarSesion.Hide();
+        }
+
+        private void FormTateti_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -50,6 +50,7 @@
             this.labelP1 = new System.Windows.Forms.Label();
             this.labelP2 = new System.Windows.Forms.Label();
             this.buttonAjustes = new System.Windows.Forms.Button();
+            this.buttonCerrarSesion = new System.Windows.Forms.Button();
             buttonSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             buttonSalir.TabIndex = 15;
             buttonSalir.Text = "SALIR";
             buttonSalir.UseVisualStyleBackColor = false;
-            buttonSalir.Click += new System.EventHandler(this.buttonJugar_Click);
+            buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // shapeContainer1
             // 
@@ -302,12 +303,28 @@
             this.buttonAjustes.UseVisualStyleBackColor = false;
             this.buttonAjustes.Click += new System.EventHandler(this.buttonAjustes_Click);
             // 
+            // buttonCerrarSesion
+            // 
+            this.buttonCerrarSesion.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(233, 41);
+            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
+            this.buttonCerrarSesion.Size = new System.Drawing.Size(114, 31);
+            this.buttonCerrarSesion.TabIndex = 17;
+            this.buttonCerrarSesion.Text = "Cerrar sesion";
+            this.buttonCerrarSesion.UseVisualStyleBackColor = false;
+            this.buttonCerrarSesion.Visible = false;
+            // 
             // FormTateti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(359, 336);
+            this.Controls.Add(this.buttonCerrarSesion);
             this.Controls.Add(this.buttonAjustes);
             this.Controls.Add(buttonSalir);
             this.Controls.Add(this.labelP2);
@@ -328,6 +345,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A jugar!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTateti_FormClosing);
+            this.Load += new System.EventHandler(this.FormTateti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +375,6 @@
         private System.Windows.Forms.Label labelP1;
         private System.Windows.Forms.Label labelP2;
         private System.Windows.Forms.Button buttonAjustes;
+        private System.Windows.Forms.Button buttonCerrarSesion;
     }
 }

@@ -15,7 +15,6 @@ namespace ClienteDelJuego
     {
         FormLogin l1;
         Controlador controlador;  
-        
         Usuario u1;
         public FormEstadisticasUsuario(Usuario u1, Controlador controlador, FormLogin l1)
         {
@@ -32,12 +31,21 @@ namespace ClienteDelJuego
             Console.WriteLine(u1.partidasGanadas);
             Console.WriteLine(u1.partidasJugadas);
         }
-
+        bool cerrarSesion = false;
         private void buttonAjustes_Click(object sender, EventArgs e)
         {
-             
-            buttonCerrarSesion.Show();
+            if (cerrarSesion)
+            {
+                buttonCerrarSesion.Hide();
+                cerrarSesion = false;
+            }
+            else
+            {
+                buttonCerrarSesion.Show();
+                cerrarSesion = true;
+            }
         }
+        
 
         private void buttonJugar_MouseEnter(object sender, EventArgs e)
         {
@@ -57,14 +65,15 @@ namespace ClienteDelJuego
         }
         private void buttonAjustes_MouseLeave(object sender, EventArgs e)
         {
+            
             buttonAjustes.Cursor = Cursors.Default;
         }
-
+      
+       
         private void buttonJugar_Click(object sender, EventArgs e)
         {
-           
+            controlador.cartelBuscarPartida();
             controlador.jugar();
- 
          }
            
         
@@ -90,6 +99,8 @@ namespace ClienteDelJuego
             formulario.Show();
             this.Hide();
         }
+        
+
         private void porcentaje()
         {
             int porc = 0;

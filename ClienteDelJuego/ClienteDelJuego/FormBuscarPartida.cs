@@ -9,11 +9,13 @@ namespace ClienteDelJuego
 
         Controlador controlador;
         Usuario u1;
-        public FormBuscarPartida(Usuario u1, Controlador controlador)
+        FormEstadisticasUsuario estadisticas;
+        public FormBuscarPartida(Usuario u1, Controlador controlador, FormEstadisticasUsuario estadisticas)
         {
             InitializeComponent();
             this.u1 = u1;
             this.controlador = controlador;
+            this.estadisticas = estadisticas;
         }       
     }
 }

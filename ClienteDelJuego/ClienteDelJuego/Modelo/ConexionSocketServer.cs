@@ -33,15 +33,7 @@ namespace ClienteDelJuego.Modelo
             }
         }
         
-        public void generarJugada(int pos)
-        {
-
-            var data = pos.ToString();
-            var sendBytes = System.Text.Encoding.ASCII.GetBytes(data);
-            Console.WriteLine(data);
-            stream.Write(sendBytes, 0, sendBytes.Length);
-            stream.Flush();
-        }
+        
 
         public void PonerEnCola(Usuario u1)
         {            
